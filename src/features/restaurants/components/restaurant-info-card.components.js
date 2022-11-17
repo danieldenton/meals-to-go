@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { StyleSheet } from "react-native";
 import { Card } from "react-native-paper";
 
+const RestaurantCard = styled(Card)`
+  background-color: white;
+`;
+
 const Title = styled.Text`
   color: red;
   padding: 16px;
@@ -23,14 +27,14 @@ export const RestaurantInfoCard = ({ restaurant = {} }) => {
   } = restaurant;
 
   return (
-    <Card elevation={5} style={styles.card}>
+    <RestaurantCard elevation={5}>
       <Card.Cover key={name} style={styles.cover} source={{ uri: photos[0] }} />
       <Title style={styles.title}>{name}</Title>
-    </Card>
+    </RestaurantCard>
   );
 };
 
 const styles = StyleSheet.create({
-  card: { backgroundColor: "white", marginBottom: 100 },
+  card: { marginBottom: 100 },
   cover: { padding: 20, backgroundColor: "white" },
 });
