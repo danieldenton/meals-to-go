@@ -1,30 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { RestaurantsScreens } from "./src/features/restaurants/screens/restaurants-screens";
 
 export default function App() {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.search}>
-        <Text>Search:</Text>
-      </View>
-      <View style={styles.list}>
-        <Text>Blank Drugs</Text>
-        <StatusBar style="auto" />
-      </View>
-    </SafeAreaView>
+    <>
+      <RestaurantsScreens />
+      <ExpoStatusBar style="auto" />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  list: {
-    flex: 11,
-    backgroundColor: "blue",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  search: {
-    flex: 1,
-    backgroundColor: "green",
-    justifyContent: "center",
-  },
-});
